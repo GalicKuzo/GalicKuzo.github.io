@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Dekko&family=Rampart+One&family=Rubik+Burned&family=VT323&display=swap');
+.logoAlura{
+    margin-top: 30px;
+    margin-left: 5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', 'Sans serif';
+}
+
+.bg_animate{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #12aa9b, #219bf3);
+    position: relative;
+    overflow: hidden;
+}
+
+.burbuja{
+    border-radius: 50%;
+    background: #fff;
+    opacity: .3;
+
+    position: absolute;
+    bottom: -150;
+    
+    animation: burbujas 3s linear infinite ;
+}
+
+.burbuja:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(2){
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(3){
+    width: 20px;
+    height: 20px;
+    left: 15%;
+    animation-duration: 1.5s;
+    animation-delay: 7s;
+}
+
+.burbuja:nth-child(4){
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(5){
+    width: 70px;
+    height: 70px;
+    left: 65%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.burbuja:nth-child(6){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(7){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(8){
+    width: 100;
+    height: 100px;
+    left: 52%;
+    animation-duration: 5s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(9){
+    width: 65px;
+    height: 65px;
+    left: 51%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.burbuja:nth-child(10){
+    width: 40px;
+    height: 40px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+
+
+@keyframes burbujas{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    30%{
+        transform: translateX(30px);
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes movimiento{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.logo p{
+    display: inline-block;
+}
+.nombre1{
+    vertical-align: top;
+    font-size: 50px;
+    margin-left: 25px;
+    color:#06284f;
+    margin-top: 30px;
+    font-weight: bold;
+    font-family: 'Capriola', sans-serif;
+}
+.nombre{  
+    vertical-align: top;
+    font-size: 30px;
+    color: white;
+    margin-top: 30px;
+    margin-left: 290px;
+    font-family: 'Rubik Burned', cursive;
+}
+.part1 div{
+    margin-top: 0px;
+    margin-left: 10%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.izquierda{
+    position: relative;
+    text-align: center;
+}
+.descripcion{
+    font-size: 45px;
+    font-family: 'Rampart One', cursive;
+    font-weight: bold;
+    margin: 0 0 20px 0px;
+    color: rgb(5, 26, 105);
+}
+ul{
+    position: absolute;
+    display: block;
+}
+li{
+    display: inline-block;
+}
+#encriptar{
+    position: relative;
+    margin-top: 30px;
+    margin-left: 100px;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #9121f3, #171fff);
+    color: rgb(231, 255, 170);
+    cursor: pointer;
+    transition: .5s;
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+    font-size: 35px;
+    font-family: 'VT323', monospace;
+    
+}
+button span {
+    position: absolute;
+    background: #fff;
+    transition: .5s;
+}
+
+button span:nth-child(1) {
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: -100%;
+}
+
+button span:nth-child(2) {
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    right: -100%;
+}
+
+button span:nth-child(3) {
+    width: 1px;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+}
+
+button span:nth-child(4) {
+    width: 1px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+}
+
+button:hover span:nth-child(1) {
+    left: 0;
+}
+
+button:hover span:nth-child(2) {
+    right: 0;
+}
+
+button:hover span:nth-child(3) {
+    bottom: 0;
+}
+
+button:hover span:nth-child(4) {
+    top: 0;
+}
+#desencriptar{
+    position: relative;
+    border: none;
+    outline: none;
+    background: linear-gradient(to left, #9121f3, #171fff);
+    color: rgb(231, 255, 170);
+    cursor: pointer;
+    transition: .5s;
+    width: 200px;
+    height: 50px;
+    margin-left: 100px;
+    overflow: hidden;
+    font-size: 35px;
+    font-family: 'VT323', monospace;
+}
+.derecha{
+    position: relative;
+}
+.cuadrado1{
+    width: 700px;
+    height: 300px;
+    border-style: outset;
+    border-width: 8px;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    border-color: #4369a3;
+    background: radial-gradient( #21dbf3, #1f78f4);
+    text-align:left;
+    resize: none;
+    color: #f5f5f5;
+    font-size: 25px;
+    font-family: 'Dekko', cursive;
+}
+.cuadrado2{
+    width: 400px;
+    height: 600px;
+    border-style: outset;
+    border-width: 8px;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    border-color: #4369a3;
+    resize: none;
+    background: #1F8DF3;
+    background-image: url(Imagenes/Advertencia.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: 'Dekko', cursive;
+    font-size: 25px;
+    color: #f5f5f5;
+    
+}

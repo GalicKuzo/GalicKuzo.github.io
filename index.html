@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Encriptador</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Imagenes/LogoEncriptador.png">
+    </head>
+    <body>
+        <header class="bg_animate">
+            <div class="logo"><img src="Imagenes/LogoAlura.png" class="logoAlura">
+                <p class="nombre1"> Challenge One | Encrypter</p>
+                <p class="nombre">by Sandro Meza</p>
+            </div>
+            <div class="burbujas">
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+            </div>
+            <main>
+                <div class="part1">
+                    <div class="izquierda">
+                        <h1 class="descripcion">Encriptador</h1>
+                        <textarea class="cuadrado1" id="textoenv"></textarea>
+                        <ul>
+                            <li>
+                                <button id="encriptar">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                Encriptar
+                                </button>
+                            </li>
+                            <li>
+                                <button id="desencriptar">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    Desencriptar
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="derecha">
+                        <textarea class="cuadrado2" readonly rows="3" cols="50" white-space: pre-line id="recibir"></textarea>
+                    </div>
+                </div>
+            </main>
+        </header>
+    </body>
+    <script>
+        var textarea = document.getElementById("textoenv");
+        var encriptar = document.getElementById("encriptar");
+        var desencriptar = document.getElementById("desencriptar");
+        function Resultado(info){
+            var recibir = document.getElementById("recibir");
+            recibir.value = info;
+            if (recibir.value != ""){
+                recibir.style.backgroundImage = "none";
+            } else {
+                recibir.style.backgroundImage = "url(Imagenes/Advertencia.png)"
+            }
+        }
+        encriptar.addEventListener("click", function() {
+            var informacion = textarea.value;
+            var arreglo = informacion.split('');
+            var i = 0;
+            var recibido = recibir.value;
+            while (i<arreglo.length){
+                if (arreglo[i] == "a"){
+                    arreglo[i] = "msqw";
+                }
+                if (arreglo[i] == "e"){
+                    arreglo[i] = "pqlt";
+                }
+                if (arreglo[i] == "i"){
+                    arreglo[i] = "bxcv";
+                }
+                if (arreglo[i] == "o"){
+                    arreglo[i] = "ygqw";
+                }
+                if (arreglo[i] == "u"){
+                    arreglo[i] = "zfpk";
+                }
+                if (arreglo[i] == "A"){
+                    arreglo[i] = "MSQW";
+                }
+                if (arreglo[i] == "E"){
+                    arreglo[i] = "PQLT";
+                }
+                if (arreglo[i] == "I"){
+                    arreglo[i] = "BXCV";
+                }
+                if (arreglo[i] == "O"){
+                    arreglo[i] = "YGQW";
+                }
+                if (arreglo[i] == "U"){
+                    arreglo[i] = "ZFPK";
+                }
+                i++;
+            }
+            informacion = arreglo.join('');
+            Resultado(informacion);
+        });
+        desencriptar.addEventListener("click", function() {
+            var informacion = textarea.value;
+            var arreglo = informacion.split('');
+            var i = 0;
+            var recibido = recibir.value;
+            while (i<arreglo.length){
+                //Minusculas
+                if (arreglo[i] == "m"){
+                    if (arreglo[i+1] == "s"){
+                        if (arreglo[i+2] == "q"){
+                            if (arreglo[i+3] == "w"){
+                                arreglo[i] = "a";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                if (arreglo[i] == "p"){
+                    if (arreglo[i+1] == "q"){
+                        if (arreglo[i+2] == "l"){
+                            if (arreglo[i+3] == "t"){
+                                arreglo[i] = "e";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                if (arreglo[i] == "b"){
+                    if (arreglo[i+1] == "x"){
+                        if (arreglo[i+2] == "c"){
+                            if (arreglo[i+3] == "v"){
+                                arreglo[i] = "i";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                if (arreglo[i] == "y"){
+                    if (arreglo[i+1] == "g"){
+                        if (arreglo[i+2] == "q"){
+                            if (arreglo[i+3] == "w"){
+                                arreglo[i] = "o";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                if (arreglo[i] == "z"){
+                    if (arreglo[i+1] == "f"){
+                        if (arreglo[i+2] == "p"){
+                            if (arreglo[i+3] == "k"){
+                                arreglo[i] = "u";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                //Mayusculas
+                if (arreglo[i] == "M"){
+                    if (arreglo[i+1] == "S"){
+                        if (arreglo[i+2] == "Q"){
+                            if (arreglo[i+3] == "W"){
+                                arreglo[i] = "A";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                if (arreglo[i] == "P"){
+                    if (arreglo[i+1] == "Q"){
+                        if (arreglo[i+2] == "L"){
+                            if (arreglo[i+3] == "T"){
+                                arreglo[i] = "E";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                if (arreglo[i] == "B"){
+                    if (arreglo[i+1] == "X"){
+                        if (arreglo[i+2] == "C"){
+                            if (arreglo[i+3] == "V"){
+                                arreglo[i] = "I";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                if (arreglo[i] == "Y"){
+                    if (arreglo[i+1] == "G"){
+                        if (arreglo[i+2] == "Q"){
+                            if (arreglo[i+3] == "W"){
+                                arreglo[i] = "O";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                if (arreglo[i] == "Z"){
+                    if (arreglo[i+1] == "F"){
+                        if (arreglo[i+2] == "P"){
+                            if (arreglo[i+3] == "K"){
+                                arreglo[i] = "U";
+                                arreglo[i+1] = "";
+                                arreglo[i+2] = "";
+                                arreglo[i+3] = "";
+                            }
+                        }
+                    }
+                }
+                i++;
+            }
+            informacion = arreglo.join('');
+            Resultado(informacion);
+        });
+    </script>
+</html>
