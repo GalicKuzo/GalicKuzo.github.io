@@ -1,16 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Capriola&family=Dekko&family=Rampart+One&family=Rubik+Burned&family=VT323&display=swap');
-.logoAlura{
-    margin-top: 30px;
-    margin-left: 5%;
-}
-*{
-    margin: 0;
+html, body, main{
+    height: 100%;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: 'Roboto', 'Sans serif';
+    margin: 0;
+    overflow: auto;
 }
 
 .bg_animate{
@@ -111,8 +104,6 @@ body{
     animation-duration: 3s;
     animation-delay: 4s;
 }
-
-
 @keyframes burbujas{
     0%{
         bottom: 0;
@@ -141,54 +132,57 @@ body{
         transform: translateY(0);
     }
 }
-.logo p{
-    display: inline-block;
+main{
+    display: grid;
+    grid-template-columns: 60vw 38vw;
+    grid-gap: 20px;
+}
+.izquierda{
+    position: relative;
+    grid-template-rows: 20% 80%;
+}
+.top{
+    display:inline-flex;
+    gap: 25px;
+}
+.medio{
+    display: grid;
+    grid-template-rows: 20% 70%;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+}
+.logoAlura{
+    align-self: center;
+    margin-left: 80px;
 }
 .nombre1{
-    vertical-align: top;
-    font-size: 50px;
-    margin-left: 25px;
+    font-size: 35px;
     color:#06284f;
-    margin-top: 30px;
     font-weight: bold;
     font-family: 'Capriola', sans-serif;
 }
 .nombre{  
-    vertical-align: top;
     font-size: 30px;
     color: white;
-    margin-top: 30px;
-    margin-left: 290px;
     font-family: 'Rubik Burned', cursive;
-}
-.part1 div{
-    margin-top: 0px;
-    margin-left: 10%;
-    display: inline-block;
-    vertical-align: middle;
-}
-.izquierda{
-    position: relative;
     text-align: center;
+    margin-top: 1px;
+    margin-bottom: 18px;
+}
+.derecha{
+    text-align: center;
+    padding: 4%;
+    position: relative;
 }
 .descripcion{
     font-size: 45px;
     font-family: 'Rampart One', cursive;
     font-weight: bold;
-    margin: 0 0 20px 0px;
     color: rgb(5, 26, 105);
-}
-ul{
-    position: absolute;
-    display: block;
-}
-li{
-    display: inline-block;
 }
 #encriptar{
     position: relative;
-    margin-top: 30px;
-    margin-left: 100px;
     border: none;
     outline: none;
     background: linear-gradient(to right, #9121f3, #171fff);
@@ -200,6 +194,7 @@ li{
     overflow: hidden;
     font-size: 35px;
     font-family: 'VT323', monospace;
+    margin-right: 25%;
     
 }
 button span {
@@ -261,16 +256,12 @@ button:hover span:nth-child(4) {
     transition: .5s;
     width: 200px;
     height: 50px;
-    margin-left: 100px;
     overflow: hidden;
     font-size: 35px;
     font-family: 'VT323', monospace;
 }
-.derecha{
-    position: relative;
-}
 .cuadrado1{
-    width: 700px;
+    width: 650px;
     height: 300px;
     border-style: outset;
     border-width: 8px;
@@ -279,20 +270,18 @@ button:hover span:nth-child(4) {
     padding: 10px;
     border-color: #4369a3;
     background: radial-gradient( #21dbf3, #1f78f4);
-    text-align:left;
     resize: none;
     color: #f5f5f5;
     font-size: 25px;
     font-family: 'Dekko', cursive;
 }
 .cuadrado2{
-    width: 400px;
-    height: 600px;
+    width: 380px;
+    height: 580px;
     border-style: outset;
     border-width: 8px;
     border-radius: 10px;
     outline: none;
-    padding: 10px;
     border-color: #4369a3;
     resize: none;
     background: #1F8DF3;
@@ -303,5 +292,6 @@ button:hover span:nth-child(4) {
     font-family: 'Dekko', cursive;
     font-size: 25px;
     color: #f5f5f5;
+
     
 }
