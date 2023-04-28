@@ -7,56 +7,51 @@
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" href="Imagenes/LogoEncriptador.png">
     </head>
-    <body>
-        <header class="bg_animate">
-            <div class="logo"><img src="Imagenes/LogoAlura.png" class="logoAlura">
-                <p class="nombre1"> Challenge One | Encrypter</p>
-                <p class="nombre">by Sandro Meza</p>
-            </div>
-            <div class="burbujas">
-                <div class="burbuja"></div>
-                <div class="burbuja"></div>
-                <div class="burbuja"></div>
-                <div class="burbuja"></div>
-                <div class="burbuja"></div>
-                <div class="burbuja"></div>
-                <div class="burbuja"></div>
-                <div class="burbuja"></div>
-                <div class="burbuja"></div>
-                <div class="burbuja"></div>
-            </div>
+    <body class="bg_animate">
+        <div class="burbujas">
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+        </div>
             <main>
-                <div class="part1">
-                    <div class="izquierda">
+                <div class="izquierda">
+                    <div class="top">
+                        <img src="Imagenes/LogoAlura.png" class="logoAlura">
+                        <p class="nombre1"> Challenge One | Encrypter</p>
+                    </div>
+                    <div class="medio">
                         <h1 class="descripcion">Encriptador</h1>
                         <textarea class="cuadrado1" id="textoenv"></textarea>
-                        <ul>
-                            <li>
-                                <button id="encriptar">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
+                        <div class="botones">
+                            <button id="encriptar">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
                                 Encriptar
-                                </button>
-                            </li>
-                            <li>
-                                <button id="desencriptar">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    Desencriptar
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="derecha">
-                        <textarea class="cuadrado2" readonly rows="3" cols="50" white-space: pre-line id="recibir"></textarea>
+                            </button>
+                            <button id="desencriptar">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Desencriptar
+                            </button>
+                        </div>
                     </div>
                 </div>
+                <div class="derecha">
+                    <p class="nombre">by Sandro Meza</p>
+                    <textarea class="cuadrado2" id="recibir" readonly></textarea>
+                </div>
             </main>
-        </header>
     </body>
     <script>
         var textarea = document.getElementById("textoenv");
