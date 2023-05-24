@@ -2,6 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width">
         <title>Encriptador</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
@@ -27,17 +28,21 @@
                         <p class="nombre1"> Challenge One | Encrypter</p>
                     </div>
                     <div class="medio">
-                        <h1 class="descripcion">Encriptador</h1>
-                        <textarea class="cuadrado1" id="textoenv"></textarea>
-                        <div class="botones">
-                            <button id="encriptar">
+                        <div class="row1">
+                            <h1 class="descripcion">Encriptador</h1>
+                        </div>
+                        <div class="row2">
+                            <textarea class="cuadrado1" id="textoenv"></textarea>
+                        </div>
+                        <div class="row3">
+                            <button id="encriptar" class="botones">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 Encriptar
                             </button>
-                            <button id="desencriptar">
+                            <button id="desencriptar" class="botones">
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -66,6 +71,20 @@
                 recibir.style.backgroundImage = "url(Imagenes/Advertencia.png)"
             }
         }
+        textarea.addEventListener("keydown", function(event) {
+            if (event.getModifierState("CapsLock")){
+                event.preventDefault();
+            }
+            const key = event.key;
+            const charCode = event.charCode;
+            const keyCode = event.keyCode;
+            if (key == key.toUpperCase() && charCode !== keyCode && key !== " "){
+                event.preventDefault();
+            }
+            if (event.ctrlKey || event.shiftKey){
+                event.preventDefault();
+            }
+        })
         encriptar.addEventListener("click", function() {
             var informacion = textarea.value;
             var arreglo = informacion.split('');
@@ -73,34 +92,19 @@
             var recibido = recibir.value;
             while (i<arreglo.length){
                 if (arreglo[i] == "a"){
-                    arreglo[i] = "msqw";
+                    arreglo[i] = "ai";
                 }
                 if (arreglo[i] == "e"){
-                    arreglo[i] = "pqlt";
+                    arreglo[i] = "enter";
                 }
                 if (arreglo[i] == "i"){
-                    arreglo[i] = "bxcv";
+                    arreglo[i] = "imes";
                 }
                 if (arreglo[i] == "o"){
-                    arreglo[i] = "ygqw";
+                    arreglo[i] = "ober";
                 }
                 if (arreglo[i] == "u"){
-                    arreglo[i] = "zfpk";
-                }
-                if (arreglo[i] == "A"){
-                    arreglo[i] = "MSQW";
-                }
-                if (arreglo[i] == "E"){
-                    arreglo[i] = "PQLT";
-                }
-                if (arreglo[i] == "I"){
-                    arreglo[i] = "BXCV";
-                }
-                if (arreglo[i] == "O"){
-                    arreglo[i] = "YGQW";
-                }
-                if (arreglo[i] == "U"){
-                    arreglo[i] = "ZFPK";
+                    arreglo[i] = "ufat";
                 }
                 i++;
             }
@@ -114,34 +118,31 @@
             var recibido = recibir.value;
             while (i<arreglo.length){
                 //Minusculas
-                if (arreglo[i] == "m"){
-                    if (arreglo[i+1] == "s"){
-                        if (arreglo[i+2] == "q"){
-                            if (arreglo[i+3] == "w"){
-                                arreglo[i] = "a";
-                                arreglo[i+1] = "";
-                                arreglo[i+2] = "";
-                                arreglo[i+3] = "";
+                if (arreglo[i] == "a"){
+                    if (arreglo[i+1] == "i"){
+                        arreglo[i] = "a";
+                        arreglo[i+1] = "";
+                    }
+                }
+                if (arreglo[i] == "e"){
+                    if (arreglo[i+1] == "n"){
+                        if (arreglo[i+2] == "t"){
+                            if (arreglo[i+3] == "e"){
+                                if (arreglo[i+4] == "r"){
+                                    arreglo[i] = "e";
+                                    arreglo[i+1] = "";
+                                    arreglo[i+2] = "";
+                                    arreglo[i+3] = "";
+                                    arreglo[i+4] = "";
+                                }
                             }
                         }
                     }
                 }
-                if (arreglo[i] == "p"){
-                    if (arreglo[i+1] == "q"){
-                        if (arreglo[i+2] == "l"){
-                            if (arreglo[i+3] == "t"){
-                                arreglo[i] = "e";
-                                arreglo[i+1] = "";
-                                arreglo[i+2] = "";
-                                arreglo[i+3] = "";
-                            }
-                        }
-                    }
-                }
-                if (arreglo[i] == "b"){
-                    if (arreglo[i+1] == "x"){
-                        if (arreglo[i+2] == "c"){
-                            if (arreglo[i+3] == "v"){
+                if (arreglo[i] == "i"){
+                    if (arreglo[i+1] == "m"){
+                        if (arreglo[i+2] == "e"){
+                            if (arreglo[i+3] == "s"){
                                 arreglo[i] = "i";
                                 arreglo[i+1] = "";
                                 arreglo[i+2] = "";
@@ -150,10 +151,10 @@
                         }
                     }
                 }
-                if (arreglo[i] == "y"){
-                    if (arreglo[i+1] == "g"){
-                        if (arreglo[i+2] == "q"){
-                            if (arreglo[i+3] == "w"){
+                if (arreglo[i] == "o"){
+                    if (arreglo[i+1] == "b"){
+                        if (arreglo[i+2] == "e"){
+                            if (arreglo[i+3] == "r"){
                                 arreglo[i] = "o";
                                 arreglo[i+1] = "";
                                 arreglo[i+2] = "";
@@ -162,72 +163,11 @@
                         }
                     }
                 }
-                if (arreglo[i] == "z"){
+                if (arreglo[i] == "u"){
                     if (arreglo[i+1] == "f"){
-                        if (arreglo[i+2] == "p"){
-                            if (arreglo[i+3] == "k"){
+                        if (arreglo[i+2] == "a"){
+                            if (arreglo[i+3] == "t"){
                                 arreglo[i] = "u";
-                                arreglo[i+1] = "";
-                                arreglo[i+2] = "";
-                                arreglo[i+3] = "";
-                            }
-                        }
-                    }
-                }
-                //Mayusculas
-                if (arreglo[i] == "M"){
-                    if (arreglo[i+1] == "S"){
-                        if (arreglo[i+2] == "Q"){
-                            if (arreglo[i+3] == "W"){
-                                arreglo[i] = "A";
-                                arreglo[i+1] = "";
-                                arreglo[i+2] = "";
-                                arreglo[i+3] = "";
-                            }
-                        }
-                    }
-                }
-                if (arreglo[i] == "P"){
-                    if (arreglo[i+1] == "Q"){
-                        if (arreglo[i+2] == "L"){
-                            if (arreglo[i+3] == "T"){
-                                arreglo[i] = "E";
-                                arreglo[i+1] = "";
-                                arreglo[i+2] = "";
-                                arreglo[i+3] = "";
-                            }
-                        }
-                    }
-                }
-                if (arreglo[i] == "B"){
-                    if (arreglo[i+1] == "X"){
-                        if (arreglo[i+2] == "C"){
-                            if (arreglo[i+3] == "V"){
-                                arreglo[i] = "I";
-                                arreglo[i+1] = "";
-                                arreglo[i+2] = "";
-                                arreglo[i+3] = "";
-                            }
-                        }
-                    }
-                }
-                if (arreglo[i] == "Y"){
-                    if (arreglo[i+1] == "G"){
-                        if (arreglo[i+2] == "Q"){
-                            if (arreglo[i+3] == "W"){
-                                arreglo[i] = "O";
-                                arreglo[i+1] = "";
-                                arreglo[i+2] = "";
-                                arreglo[i+3] = "";
-                            }
-                        }
-                    }
-                }
-                if (arreglo[i] == "Z"){
-                    if (arreglo[i+1] == "F"){
-                        if (arreglo[i+2] == "P"){
-                            if (arreglo[i+3] == "K"){
-                                arreglo[i] = "U";
                                 arreglo[i+1] = "";
                                 arreglo[i+2] = "";
                                 arreglo[i+3] = "";
