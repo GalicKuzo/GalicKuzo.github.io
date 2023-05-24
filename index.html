@@ -59,6 +59,7 @@
             </main>
     </body>
     <script>
+        const letrasMinusculas = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '];
         var textarea = document.getElementById("textoenv");
         var encriptar = document.getElementById("encriptar");
         var desencriptar = document.getElementById("desencriptar");
@@ -71,20 +72,11 @@
                 recibir.style.backgroundImage = "url(Imagenes/Advertencia.png)"
             }
         }
-        textarea.addEventListener("keydown", function(event) {
-            if (event.getModifierState("CapsLock")){
-                event.preventDefault();
-            }
-            const key = event.key;
-            const charCode = event.charCode;
-            const keyCode = event.keyCode;
-            if (key == key.toUpperCase() && charCode !== keyCode && key !== " "){
-                event.preventDefault();
-            }
-            if (event.ctrlKey || event.shiftKey){
-                event.preventDefault();
-            }
-        })
+        textarea.addEventListener("input", function(event) {
+        const inputValue = event.target.value;
+        const sanitizedValue = inputValue.replace(/[^a-z\n\s]/g, "");
+        event.target.value = sanitizedValue;
+        });
         encriptar.addEventListener("click", function() {
             var informacion = textarea.value;
             var arreglo = informacion.split('');
